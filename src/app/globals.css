@@ -1,29 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FFFFFF;
-  --color-primary-dark: #E0E0E0;
-  --color-primary-light: #F5F5F5;
-  --color-secondary: #151515;
-  --color-background-dark: #0F0F0F;
-  --color-neutral-950: #0F0F0F;
-  --color-neutral-900: #1a1a1a;
-  --color-neutral-800: #2d2d2d;
-  --color-neutral-400: #9ca3af;
-  --color-neutral-50: #fafafa;
-  
+  /* ── Primary: Deep Burgundy/Wine ── */
+  --color-primary:        #9B2335;
+  --color-primary-dark:   #7B1829;
+  --color-primary-light:  #C4486A;
+  --color-primary-rgb:    155, 35, 53;
+
+  /* ── Warm Light Neutral Scale (cream → near-black) ── */
+  --color-neutral-950: #F5EFE8;   /* lightest cream  — section backgrounds */
+  --color-neutral-900: #EDE5D8;   /* warm cream      — alt section / footer */
+  --color-neutral-800: #DDD4C5;   /* tan/border      — dividers */
+  --color-neutral-700: #C0ADA0;   /* warm tan        — disabled */
+  --color-neutral-600: #9C8070;   /* warm muted      — placeholder */
+  --color-neutral-500: #7A6055;   /* warm brown      — lighter muted */
+  --color-neutral-400: #5C4040;   /* dark muted      — muted text on cream */
+  --color-neutral-300: #3D2828;   /* body text       — medium text */
+  --color-neutral-200: #2D1818;   /* secondary heading */
+  --color-neutral-100: #1C1010;   /* heading / dark text */
+  --color-neutral-50:  #100808;   /* near black */
+
   --font-playfair: var(--font-playfair), "Playfair Display", serif;
   --font-manrope: var(--font-manrope), "Manrope", sans-serif;
 }
 
 @layer base {
   :root {
-    --background: #0F0F0F;
-    --foreground: #fafafa;
+    --background: #EDE5D8;
+    --foreground: #1A0808;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
+  }
+
+  /* Range input thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #9B2335;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(155, 35, 53, 0.5);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #9B2335;
+    cursor: pointer;
+    border: none;
   }
 }
