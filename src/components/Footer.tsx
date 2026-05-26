@@ -25,22 +25,45 @@ export default function Footer() {
 
         {/* Links 1 */}
         <div className="flex flex-col space-y-4 pt-2">
-          <Link href="/privacy" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
-            Política de Privacidad
+          <Link href="/" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
+            Inicio
           </Link>
-          <Link href="/terms" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
-            Términos de Servicio
+          <Link href="/catalog" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
+            Catálogo
+          </Link>
+          <Link href="/about" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
+            Nosotros
           </Link>
         </div>
 
-        {/* Links 2 */}
+        {/* Links 2 — Contact */}
         <div className="flex flex-col space-y-4 pt-2">
-          <Link href="/shipping" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
-            Envíos y Devoluciones
-          </Link>
-          <Link href="/contact" className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold">
-            Contacto
-          </Link>
+          <p className="text-neutral-100 text-xs uppercase tracking-widest font-semibold mb-2">Contacto</p>
+          <a href="tel:+5434464262 30" className="hover:text-primary transition-colors text-xs">
+            +54 3446 42-6230
+          </a>
+          <p className="text-xs leading-relaxed">
+            25 de Mayo 930,<br />Gualeguaychú, Entre Ríos
+          </p>
+          <div className="flex items-center space-x-3 pt-1">
+            <a
+              href="https://www.instagram.com/perfumeriaalexis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold"
+            >
+              Instagram
+            </a>
+            <span className="text-neutral-700">·</span>
+            <a
+              href="https://www.facebook.com/PerfumeriaAlexis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors text-xs uppercase tracking-wider font-semibold"
+            >
+              Facebook
+            </a>
+          </div>
         </div>
 
         {/* Newsletter */}
