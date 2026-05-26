@@ -37,11 +37,11 @@ const FEATURED = [
 
 export default function FeaturedCarousel() {
   const [active, setActive] = useState(1);
-  const [animDir, setAnimDir] = useState<"left" | "right" | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const autoPlayRef = useRef<NodeJS.Timeout>();
+  const autoPlayRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+  const nextRef    = useRef<() => void>(() => {});
   const { addItem } = useCart();
 
   const n = FEATURED.length;
@@ -62,13 +62,11 @@ export default function FeaturedCarousel() {
   }, []);
 
   const goTo = useCallback(
-    (next: number, dir: "left" | "right") => {
+    (next: number, _dir?: "left" | "right") => {
       if (isAnimating) return;
       setIsAnimating(true);
-      setAnimDir(dir);
       setTimeout(() => {
         setActive(((next % n) + n) % n);
-        setAnimDir(null);
         setIsAnimating(false);
       }, 480);
     },
@@ -78,15 +76,14 @@ export default function FeaturedCarousel() {
   const prev = useCallback(() => goTo(active - 1, "right"), [active, goTo]);
   const next = useCallback(() => goTo(active + 1, "left"), [active, goTo]);
 
-  // Auto-play
+  // Keep nextRef always pointing to the latest next() without restarting the interval
+  useEffect(() => { nextRef.current = next; }, [next]);
+
+  // Auto-play: starts once, reads next via ref so it never needs to restart
   useEffect(() => {
-    const start = () => {
-      autoPlayRef.current = setInterval(() => next(), 1200);
-    };
-    const stop = () => clearInterval(autoPlayRef.current);
-    start();
-    return stop;
-  }, [next]);
+    autoPlayRef.current = setInterval(() => nextRef.current(), 1200);
+    return () => clearInterval(autoPlayRef.current);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Calcular posición de cada tarjeta respecto al activo
   const getPos = (i: number) => {
