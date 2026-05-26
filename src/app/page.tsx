@@ -13,7 +13,7 @@ export default function Home() {
         <section className="relative h-screen w-full flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/fondo_header5.png"
+              src="/fondohome7.png"
               alt="Frasco de perfume de lujo"
               fill
               className="object-cover object-center"
@@ -26,9 +26,6 @@ export default function Home() {
           {/* Text Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-end text-center p-6 pb-24 md:pb-32">
             <div className="flex flex-col items-center mb-6">
-              <div className="relative w-24 h-24 md:w-32 md:h-32 overflow-hidden rounded-full border-2 border-white/30 mb-8 shadow-xl">
-                <img src="/logo_perfumeria.png" alt="Perfumería Alexis Logo" className="object-cover w-full h-full" />
-              </div>
               <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight tracking-wider shadow-black/50 drop-shadow-lg">
                 PERFUMERÍA
               </h1>
@@ -37,10 +34,16 @@ export default function Home() {
               </span>
             </div>
 
-            <span className="text-white text-[10px] md:text-xs tracking-[0.3em] font-bold uppercase mb-4 font-manrope mt-6 md:mt-8 drop-shadow-md">
+            <span
+              className="font-manrope text-[11px] md:text-sm tracking-[0.35em] font-bold uppercase mb-4 mt-6 md:mt-8 text-white px-5 py-1.5 rounded-full"
+              style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)", textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}
+            >
               La Esencia de la Elegancia
             </span>
-            <p className="font-manrope text-sm md:text-base text-neutral-100 max-w-xl mb-10 leading-relaxed drop-shadow-md">
+            <p
+              className="font-manrope text-base md:text-lg text-white max-w-xl mb-10 leading-relaxed"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.8)" }}
+            >
               Descubre un mundo donde el aroma se convierte en arte. Elaborado con lujo intransigente para el individuo exigente.
             </p>
             <Link

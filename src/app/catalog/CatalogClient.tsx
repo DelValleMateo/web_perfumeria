@@ -89,7 +89,7 @@ export default function CatalogClient({ products }: CatalogClientProps) {
     <div className="container mx-auto px-6 md:px-12">
 
       {/* ── Filter Bar ── */}
-      <div className="sticky top-[72px] z-30 mb-10 -mx-6 md:-mx-12 px-6 md:px-12 py-4 bg-neutral-900/80 backdrop-blur-xl border-b border-primary/10">
+      <div className="mb-10 -mx-6 md:-mx-12 px-6 md:px-12 py-4 bg-neutral-900/80 border-b border-primary/10">
         <div className="bg-neutral-950 shadow-sm border border-primary/20 rounded-2xl px-6 py-4 flex flex-wrap lg:flex-nowrap items-center gap-6">
 
           {/* Search */}

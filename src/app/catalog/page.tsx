@@ -21,7 +21,7 @@ export default async function CatalogPage() {
         {/* Hero Banner */}
         <section className="relative h-[40vh] md:h-[50vh] w-full flex flex-col items-center justify-center">
           <Image
-            src="/nuestra_coleccion_catalogo2.png"
+            src="/nuestra_coleccion_catalogo.png"
             fill
             className="object-cover object-center"
             alt="Nuestra Colección"
