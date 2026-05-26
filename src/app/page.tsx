@@ -13,7 +13,7 @@ export default function Home() {
         <section className="relative h-screen w-full flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/fondohome7.png"
+              src="/fondohome8.png"
               alt="Frasco de perfume de lujo"
               fill
               className="object-cover object-center"
